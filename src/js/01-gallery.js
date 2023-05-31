@@ -28,5 +28,5 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-// const styleLi = document.querySelector('ul');
-// styleLi.style.listStyleType = "none";
+const styleLi = document.querySelector('ul');
+styleLi.style.listStyleType = "none";
