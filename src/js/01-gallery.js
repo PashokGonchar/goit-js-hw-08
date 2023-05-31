@@ -27,3 +27,6 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
+
+const styleLi = document.querySelector('ul');
+styleLi.style.listStyleType = "none";
