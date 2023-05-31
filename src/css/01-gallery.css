@@ -3,6 +3,10 @@
   --animation-duration: 250ms;
 }
 
+li {
+  list-style-type: none;
+}
+
 .gallery {
   display: grid;
   max-width: 1140px;
@@ -40,3 +44,4 @@
 .gallery__link:hover {
   cursor: zoom-in;
 }
+
