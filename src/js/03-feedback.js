@@ -13,15 +13,19 @@ emailFeedback.addEventListener('input', throttle(onEmailInput, 500));
 
 function onFormSubmit(e) {
   e.preventDefault();
-  e.currentTarget.reset();
+  e.target.reset();
 
-    localStorage.removeItem('feedback-form-state-textarea');
-    localStorage.removeItem('feedback-form-state-email');
+  localStorage.removeItem('feedback-form-state-textarea');
+  localStorage.removeItem('feedback-form-state-email');
+
+//   console.log('email: ', messageEmail);
+//   console.log('message: ', messageTextarea);
 }
 
 function onTextareaInput(e) {
   const messageTextarea = e.target.value;
-  localStorage.setItem('feedback-form-state-textarea', messageTextarea);
+    localStorage.setItem('feedback-form-state-textarea', messageTextarea);
+    console.log(messageTextarea)
 }
 
 function onEmailInput(e) {
