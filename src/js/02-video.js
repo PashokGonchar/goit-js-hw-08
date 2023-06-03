@@ -9,7 +9,7 @@ const player = new Player('vimeo-player', {
 player.on(
   'timeupdate',
   throttle(function (data) {
-    //  console.log('timeupdate:', data);
+     console.log('timeupdate:', data);
     localStorage.setItem('videoplayer-current-time', data.seconds);
   }, 1000)
 );
