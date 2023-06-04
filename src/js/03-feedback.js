@@ -16,10 +16,10 @@ function onFormSubmit(e) {
   if (textareaFeedback.value === '' || emailFeedback.value === '') {
     alert('Всі поля повинні бути заповнені!!!');
   } else {
-    console.log('email: ', localStorage.getItem('feedback-form-state-email'));
+    console.log('email: ', [localStorage.getItem('feedback-form-state-email')]);
     console.log(
       'message: ',
-      localStorage.getItem('feedback-form-state-textarea')
+      [localStorage.getItem('feedback-form-state-textarea')]
     );
 
     localStorage.removeItem('feedback-form-state-textarea');
