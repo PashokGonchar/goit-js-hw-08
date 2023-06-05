@@ -7,6 +7,11 @@ const emailFeedback = document.querySelector('.feedback-form input');
 clearTextareaFeedback();
 clearEmailFeedback();
 
+var formData = {};
+formFeedback.addEventListener('input', e => {
+  formData[e.target.name] = e.target.value;
+});
+
 formFeedback.addEventListener('submit', onFormSubmit);
 textareaFeedback.addEventListener('input', throttle(onTextareaInput, 500));
 emailFeedback.addEventListener('input', throttle(onEmailInput, 500));
@@ -16,17 +21,14 @@ function onFormSubmit(e) {
   if (textareaFeedback.value === '' || emailFeedback.value === '') {
     alert('Всі поля повинні бути заповнені!!!');
   } else {
-    console.log('email: ', [localStorage.getItem('feedback-form-state-email')]);
-    console.log(
-      'message: ',
-      [localStorage.getItem('feedback-form-state-textarea')]
-    );
+     console.log(formData);
 
     localStorage.removeItem('feedback-form-state-textarea');
     localStorage.removeItem('feedback-form-state-email');
 
     e.target.reset();
-  } return false;
+  }
+  return false;
 }
 
 function onTextareaInput(e) {
